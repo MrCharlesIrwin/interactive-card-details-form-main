@@ -1,0 +1,262 @@
+@use "sass/base/core" as *;
+@use "sass/variables/colors" as *;
+body {
+  display: grid;
+  justify-content: center;
+}
+main {
+  width: 370px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cardOutput {
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100% 72%;
+  background-color: $White;
+  color: $LightGrayishViolet;
+  height: 20rem;
+  width: inherit;
+  padding-top: 1.5rem;
+  &__card {
+    // font-size: 2rem;
+    border-radius: 0.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 17.5em;
+    height: 10em;
+    padding: 1em 1.2em;
+  }
+  &__cardsBack {
+    background-image: url("../images/bg-card-back.png");
+    transform: translateX(25%);
+    position: relative;
+    &__cvcOutput {
+      position: absolute;
+      top: 42%;
+      left: 82%;
+      font-size: 0.9em;
+      color: $White;
+    }
+  }
+  &__cardsFront {
+    background-image: url("../images/bg-card-front.png");
+    transform: translate(6%, -44%);
+    color: $White;
+    &__logo {
+      width: 3.5em;
+    }
+    &__cardsNumberOutput {
+      display: flex;
+      justify-content: space-between;
+      margin: 2em auto 0.5em;
+      width: 100%;
+      span {
+        letter-spacing: 0.155em;
+      }
+    }
+    &__nameANDexpDateWrapper {
+      font-size: 0.8em;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+// FORM
+
+.formWrapper {
+  background-color: $White;
+  padding-inline: 1.5em;
+
+  &__labelForCardsNameAndNumber {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: $VeryDarkViolet;
+    margin-bottom: 0.5em;
+  }
+  &__inputForCardsNameAndNumber {
+    border: 1px solid $LightGrayishViolet;
+    border-radius: 0.5em;
+    height: 3em;
+    width: 100%;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    &:focus {
+      outline: 1px solid hsl(278, 94%, 30%);
+    }
+    &::placeholder {
+      font-size: 1em;
+      opacity: 0.3;
+    }
+  }
+  &__submitButton {
+    background-color: $VeryDarkViolet;
+    color: $White;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 0.5em;
+    height: 3.2em;
+    width: 100%;
+    margin-block: 1.9em;
+  }
+}
+
+.expDateAndCVC-wrapper {
+  color: $VeryDarkViolet;
+  width: 100%;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-areas:
+    "laberForDate laberForDate laberForCVC laberForCVC"
+    "inputMonth   inputYear    inputCVC    inputCVC";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 2.5em;
+
+  input {
+    width: 100%;
+    border: 1px solid $LightGrayishViolet;
+    border-radius: 0.5em;
+    padding-inline: 0.5em;
+    font-size: 1em;
+    &:focus {
+      outline: 1px solid hsl(278, 94%, 30%);
+    }
+  }
+  &__labelForDate {
+    grid-area: laberForDate;
+  }
+  &__inputMonth {
+    grid-area: inputMonth;
+  }
+  &__inputYear {
+    grid-area: inputYear;
+  }
+  &__labelForCVC {
+    grid-area: laberForCVC;
+  }
+  &__inputCVC {
+    grid-area: inputCVC;
+  }
+}
+
+// Completed state
+
+.CompletedState {
+  display: none;
+  text-align: center;
+  img {
+    margin-top: 2em;
+  }
+  h2 {
+    text-transform: uppercase;
+    color: hsl(278, 34%, 30%);
+
+    margin-bottom: 1em;
+  }
+  p {
+    color: $DarkGrayishViolet;
+  }
+  .continueButton {
+    background-color: $VeryDarkViolet;
+    color: $White;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 0.5em;
+    height: 3.2em;
+    width: 80%;
+    margin-block: 1.9em;
+  }
+}
+
+// desktop design
+
+@media (min-width: 850px) {
+  body {
+    height: 99vh;
+    background-image: url("../images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 40% 100%;
+
+    background-color: $White;
+  }
+  main {
+    width: 900px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+  .cardOutput {
+    background-image: none;
+    background-color: initial;
+    &__card {
+      font-size: 1.3rem;
+    }
+    &__cardsBack {
+      transform: translate(19%, 70%);
+    }
+    &__cardsFront {
+      transform: translate(10%, -150%);
+    }
+  }
+  .formWrapper {
+    background-color: initial;
+    font-size: 1.3rem;
+    &__submitButton {
+      height: 2.5em;
+    }
+  }
+  .CompletedState {
+
+    width:60rem;
+  }
+}
+
+// JS
+
+.frongFormatCase {
+  display: none;
+  margin-top: 0;
+  color: $Red;
+  font-size: 0.9rem;
+}
+.displayBlock {
+  display: block;
+}
+.cantBeblank-wrapper {
+  font-size: 0.9rem;
+  width: 100%;
+  color: $Red;
+  display: flex;
+  // justify-content: space-between;
+  width: 83%;
+  margin-block: 0.5rem -0.5rem;
+  div {
+    display: none;
+  }
+  div:last-of-type {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+.displayFlex {
+  display: flex;
+}
+
+.show {
+  display: block !important;
+}
+
+.redOutline {
+  border: none !important;
+  outline: 1px solid $Red !important;
+  &:focus {
+  outline: 1px solid $Red !important;
+  }
+}

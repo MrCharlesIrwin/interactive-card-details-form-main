@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <!-- card-section -->
+
+      <section class="cardOutput">
+        <div class="cardOutput__cardsBack cardOutput__card">
+          <em class="cardOutput__cardsBack__cvcOutput">000</em>
+        </div>
+        <div class="cardOutput__cardsFront cardOutput__card">
+          <img src="images/card-logo.svg" alt="#" class="cardOutput__cardsFront__logo" />
+          <div class="cardOutput__cardsFront__cardsNumberOutput">
+            <div>
+              <span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span
+              ><span class="CardNumberOutput">0</span>
+            </div>
+            <div>
+              <span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span
+              ><span class="CardNumberOutput">0</span>
+            </div>
+            <div>
+              <span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span
+              ><span class="CardNumberOutput">0</span>
+            </div>
+            <div>
+              <span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span><span class="CardNumberOutput">0</span
+              ><span class="CardNumberOutput">0</span>
+            </div>
+          </div>
+          <div class="cardOutput__cardsFront__nameANDexpDateWrapper">
+            <em class="cardNameOutput"> Jane Appleseed</em>
+            <em><span class="expDateOutput">00</span>/<span class="expDateOutput">00</span></em>
+          </div>
+        </div>
+      </section>
+
+      <!-- form-section -->
+
+      <section class="formWrapper">
+        <form action="#" class="form">
+          <label for="cardName" class="formWrapper__labelForCardsNameAndNumber">Cardholder Name</label>
+          <input type="input" placeholder="e.g. Jane Appleseed" class="formWrapper__inputForCardsNameAndNumber" id="cardName" />
+          <label for="cardNumber" class="formWrapper__labelForCardsNameAndNumber">Card Number</label>
+          <input
+            type="input"
+            placeholder="e.g. 1234 5678 9123 0000"
+            class="formWrapper__inputForCardsNameAndNumber dateAndcvcAndumberInput"
+            maxlength="16"
+            id="cardNumber"
+          />
+          <p class="frongFormatCase">Whrong format, numbers only</p>
+          <div class="expDateAndCVC-wrapper">
+            <label for="expDate" class="expDateAndCVC-wrapper__labelForDate">Exp. Date (MM/YY)</label>
+            <input
+              type="input"
+              placeholder="MM"
+              maxlength="2"
+              minlength="0"
+              id="expDate"
+              class="expDateAndCVC-wrapper__inputMonth dateAndcvcAndumberInput dateAndcvcInput"
+            />
+            <input
+              type="input"
+              placeholder="YY"
+              minlength="0"
+              maxlength="2"
+              id="expDate"
+              class="expDateAndCVC-wrapper__inputYear dateAndcvcAndumberInput dateAndcvcInput"
+            />
+            <label for="cvc" class="expDateAndCVC-wrapper__labelForCVC">CVC</label>
+            <input
+              type="input"
+              placeholder="e.g. 123"
+              minlength="0"
+              maxlength="3"
+              id="cvc"
+              class="expDateAndCVC-wrapper__inputCVC dateAndcvcAndumberInput dateAndcvcInput"
+            />
+          </div>
+          <div class="cantBeblank-wrapper">
+            <div class="cantBeblank-message">Can't be blank</div>
+            <div class="cantBeblank-message">Can't be blank</div>
+          </div>
+          <button class="formWrapper__submitButton">Confirm</button>
+        </form>
+      </section>
+
+      <!-- Completed state start -->
+
+      <section class="CompletedState">
+        <img src="images/icon-complete.svg" alt="#" />
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+
+        <button class="continueButton">Continue</button>
+      </section>
+    </main>
+  </body>
+</html>

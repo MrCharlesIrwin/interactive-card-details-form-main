@@ -1,0 +1,304 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  width: 370px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cardOutput {
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100% 72%;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(270, 3%, 70%);
+  height: 20rem;
+  width: inherit;
+  padding-top: 1.5rem;
+}
+.cardOutput__card {
+  border-radius: 0.5em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 17.5em;
+  height: 10em;
+  padding: 1em 1.2em;
+}
+.cardOutput__cardsBack {
+  background-image: url("../images/bg-card-back.png");
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
+  position: relative;
+}
+.cardOutput__cardsBack__cvcOutput {
+  position: absolute;
+  top: 42%;
+  left: 82%;
+  font-size: 0.9em;
+  color: hsl(0, 0%, 100%);
+}
+.cardOutput__cardsFront {
+  background-image: url("../images/bg-card-front.png");
+  -webkit-transform: translate(6%, -44%);
+          transform: translate(6%, -44%);
+  color: hsl(0, 0%, 100%);
+}
+.cardOutput__cardsFront__logo {
+  width: 3.5em;
+}
+.cardOutput__cardsFront__cardsNumberOutput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2em auto 0.5em;
+  width: 100%;
+}
+.cardOutput__cardsFront__cardsNumberOutput span {
+  letter-spacing: 0.155em;
+}
+.cardOutput__cardsFront__nameANDexpDateWrapper {
+  font-size: 0.8em;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.formWrapper {
+  background-color: hsl(0, 0%, 100%);
+  padding-inline: 1.5em;
+}
+.formWrapper__labelForCardsNameAndNumber {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 0.5em;
+}
+.formWrapper__inputForCardsNameAndNumber {
+  border: 1px solid hsl(270, 3%, 70%);
+  border-radius: 0.5em;
+  height: 3em;
+  width: 100%;
+  margin-bottom: 1em;
+  padding-left: 1em;
+}
+.formWrapper__inputForCardsNameAndNumber:focus {
+  outline: 1px solid hsl(278, 94%, 30%);
+}
+.formWrapper__inputForCardsNameAndNumber::-webkit-input-placeholder {
+  font-size: 1em;
+  opacity: 0.3;
+}
+.formWrapper__inputForCardsNameAndNumber::-moz-placeholder {
+  font-size: 1em;
+  opacity: 0.3;
+}
+.formWrapper__inputForCardsNameAndNumber:-ms-input-placeholder {
+  font-size: 1em;
+  opacity: 0.3;
+}
+.formWrapper__inputForCardsNameAndNumber::-ms-input-placeholder {
+  font-size: 1em;
+  opacity: 0.3;
+}
+.formWrapper__inputForCardsNameAndNumber::placeholder {
+  font-size: 1em;
+  opacity: 0.3;
+}
+.formWrapper__submitButton {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1.1em;
+  border: none;
+  border-radius: 0.5em;
+  height: 3.2em;
+  width: 100%;
+  margin-block: 1.9em;
+}
+
+.expDateAndCVC-wrapper {
+  color: hsl(278, 68%, 11%);
+  width: 100%;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-areas: "laberForDate laberForDate laberForCVC laberForCVC" "inputMonth   inputYear    inputCVC    inputCVC";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 2.5em;
+}
+.expDateAndCVC-wrapper input {
+  width: 100%;
+  border: 1px solid hsl(270, 3%, 70%);
+  border-radius: 0.5em;
+  padding-inline: 0.5em;
+  font-size: 1em;
+}
+.expDateAndCVC-wrapper input:focus {
+  outline: 1px solid hsl(278, 94%, 30%);
+}
+.expDateAndCVC-wrapper__labelForDate {
+  grid-area: laberForDate;
+}
+.expDateAndCVC-wrapper__inputMonth {
+  grid-area: inputMonth;
+}
+.expDateAndCVC-wrapper__inputYear {
+  grid-area: inputYear;
+}
+.expDateAndCVC-wrapper__labelForCVC {
+  grid-area: laberForCVC;
+}
+.expDateAndCVC-wrapper__inputCVC {
+  grid-area: inputCVC;
+}
+
+.CompletedState {
+  display: none;
+  text-align: center;
+}
+.CompletedState img {
+  margin-top: 2em;
+}
+.CompletedState h2 {
+  text-transform: uppercase;
+  color: hsl(278, 34%, 30%);
+  margin-bottom: 1em;
+}
+.CompletedState p {
+  color: hsl(279, 6%, 55%);
+}
+.CompletedState .continueButton {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1.1em;
+  border: none;
+  border-radius: 0.5em;
+  height: 3.2em;
+  width: 80%;
+  margin-block: 1.9em;
+}
+
+@media (min-width: 850px) {
+  body {
+    height: 99vh;
+    background-image: url("../images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 40% 100%;
+    background-color: hsl(0, 0%, 100%);
+  }
+  main {
+    width: 900px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 5rem;
+  }
+  .cardOutput {
+    background-image: none;
+    background-color: initial;
+  }
+  .cardOutput__card {
+    font-size: 1.3rem;
+  }
+  .cardOutput__cardsBack {
+    -webkit-transform: translate(19%, 70%);
+            transform: translate(19%, 70%);
+  }
+  .cardOutput__cardsFront {
+    -webkit-transform: translate(10%, -150%);
+            transform: translate(10%, -150%);
+  }
+  .formWrapper {
+    background-color: initial;
+    font-size: 1.3rem;
+  }
+  .formWrapper__submitButton {
+    height: 2.5em;
+  }
+  .CompletedState {
+    width: 60rem;
+  }
+}
+.frongFormatCase {
+  display: none;
+  margin-top: 0;
+  color: hsl(0, 100%, 66%);
+  font-size: 0.9rem;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.cantBeblank-wrapper {
+  font-size: 0.9rem;
+  width: 100%;
+  color: hsl(0, 100%, 66%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 83%;
+  margin-block: 0.5rem -0.5rem;
+}
+.cantBeblank-wrapper div {
+  display: none;
+}
+.cantBeblank-wrapper div:last-of-type {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.displayFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.show {
+  display: block !important;
+}
+
+.redOutline {
+  border: none !important;
+  outline: 1px solid hsl(0, 100%, 66%) !important;
+}
+.redOutline:focus {
+  outline: 1px solid hsl(0, 100%, 66%) !important;
+}/*# sourceMappingURL=main.css.map */
